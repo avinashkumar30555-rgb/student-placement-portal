@@ -1,8 +1,10 @@
-
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Home.css';
 
 function Home() {
+  const navigate = useNavigate();
+
   return (
     <div className="home">
 
@@ -18,14 +20,26 @@ function Home() {
         </div>
 
         <div className="nav-buttons">
-          <button className="login-btn">Login</button>
-          <button className="signup-btn">Signup</button>
+          <button
+            className="login-btn"
+            onClick={() => alert("Login page is coming soon!")}
+          >
+            Login
+          </button>
+
+          <button
+            className="signup-btn"
+            onClick={() => navigate("/signup")}
+          >
+            Signup
+          </button>
         </div>
       </nav>
 
       {/* Hero Section */}
       <section className="hero" id="home">
         <div className="hero-content">
+
           <h1>
             Student Placement &amp;
             <span> Job Portal</span>
@@ -37,19 +51,23 @@ function Home() {
           </p>
 
           <div className="hero-buttons">
-            <button className="primary-btn">
+            <button
+              className="primary-btn"
+              onClick={() => navigate("/signup")}
+            >
               Get Started →
             </button>
 
-            <button className="secondary-btn">
+            <a href="#jobs" className="secondary-btn">
               Browse Jobs
-            </button>
+            </a>
           </div>
+
         </div>
 
         <div className="hero-image">
           <div className="job-card">
-            💼
+            <h2>💼</h2>
             <h2>Find Your Dream Job</h2>
             <p>Your Career Starts Here!</p>
             <span>🎓 🚀 💻</span>
